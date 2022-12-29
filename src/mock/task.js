@@ -49,8 +49,8 @@ const newData = [
   },
   {
     'basePrice': 190,
-    'dateFrom': '2017-07-09T20:55:56.845Z',
-    'dateTo': '2018-07-11T08:55:13.375Z',
+    'dateFrom': '2023-07-09T20:55:56.845Z',
+    'dateTo': '2023-07-11T08:55:13.375Z',
     'destination': 6,
     'id': 6,
     'offers': [1, 3],
@@ -67,8 +67,8 @@ const newData = [
   },
   {
     'basePrice': 1430,
-    'dateFrom': '2017-06-09T12:30:56.845Z',
-    'dateTo': '2018-07-11T10:21:13.375Z',
+    'dateFrom': '2023-06-09T12:30:56.845Z',
+    'dateTo': '2023-07-11T10:21:13.375Z',
     'destination': 8,
     'id': 8,
     'offers': [2,3],
@@ -76,8 +76,8 @@ const newData = [
   },
   {
     'basePrice': 7550,
-    'dateFrom': '2017-07-10T22:55:56.845Z',
-    'dateTo': '2018-07-13T11:23:15.375Z',
+    'dateFrom': '2024-07-10T22:55:56.845Z',
+    'dateTo': '2024-07-13T11:23:15.375Z',
     'destination': 9,
     'id': 9,
     'offers': [1, 2],
@@ -105,6 +105,10 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'New-York parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   },
@@ -113,6 +117,14 @@ const destinationsList = [
     'description': 'Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019 in an area of more than 105 km².',
     'name': 'Paris',
     'pictures': [
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
+      },
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Paris parliament building'
@@ -127,6 +139,22 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Bangkok parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   },
@@ -138,6 +166,10 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Berlin parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   },
@@ -149,6 +181,10 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Los Angeles parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   },
@@ -160,6 +196,10 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Bangkok parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   },
@@ -168,10 +208,6 @@ const destinationsList = [
     'description': 'Andorra,[g] officially the Principality of Andorra,[1][h] is a sovereign landlocked microstate on the Iberian Peninsula, in the eastern Pyrenees, bordered by France to the north and Spain to the south.',
     'name': 'Andora',
     'pictures': [
-      {
-        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
-        'description': 'Andora parliament building'
-      }
     ]
   },
   {
@@ -182,6 +218,10 @@ const destinationsList = [
       {
         'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
         'description': 'Lisbon parliament building'
+      },
+      {
+        'src': `https://loremflickr.com/248/152?random=${getRandomPositiveInteger(1,100)}`,
+        'description': 'Paris parliament building'
       }
     ]
   }
@@ -353,22 +393,25 @@ const offersByType = [
 ];
 
 
-function makeNewTrip (point, info) {
-  const resultArray = point.map((x) => x);
+// function makeNewTrip (point, info) {
+//   const resultArray = point.map((x) => x);
 
-  for (let i = 0; i < point.length; i++) {
-    for (let j = 0; j < info.length; j++) {
-      if(info[j].id === newData[i].destination) {
-        resultArray[i].destination = info[j];
-      }
-    }
-  }
-  return resultArray;
-}
+//   for (let i = 0; i < point.length; i++) {
+//     for (let j = 0; j < info.length; j++) {
+//       if(info[j].id === newData[i].destination) {
+//         resultArray[i].destination = info[j];
+//       }
+//     }
+//   }
+//   return resultArray;
+// }
+
+// const pointsFind = this.#allOffersByType.find((point) => point.id === trip.id)
 
 
 function getRandomTrip() {
-  return getRandomArrayElement(makeNewTrip(newData, destinationsList));
+
+  return getRandomArrayElement(newData);
 }
 
-export {getRandomTrip, offersByType};
+export {getRandomTrip, offersByType, destinationsList};

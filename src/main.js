@@ -14,6 +14,7 @@ const mainElement = document.querySelector('.trip-events');
 
 const tripModel = new TripModel;
 const boardPresenter = new BoardPresenter({listContainer: mainElement, tripModel});
-render(new NewFilters(), filtersElement);
+
+render(new NewFilters({trip: tripModel.trip}), filtersElement);
 
 boardPresenter.init();
